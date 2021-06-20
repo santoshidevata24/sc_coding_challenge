@@ -17,6 +17,7 @@ Given a file with set of words, find the longest word and transpose it.
 - Pytest
 - pytest-html-reporter
 - Docker (optional)
+- Coverage (optional)
 
 ## Platforms
 Tested on below operating systems
@@ -33,12 +34,14 @@ Mac Users:
 brew install python 
 pip install pytest
 pip install pytest-html-reporter
+pip install coverage
 ```
 Windows Users:
 - Install [python3](https://www.python.org/downloads/)
 ```cmd
 pip install pytest
-pip install pytest-html-reporter    
+pip install pytest-html-reporter
+pip install coverage  
 ```
 
 ## Execution Instructions
@@ -60,7 +63,18 @@ pytest -v --html-report=./report/longest_transpose_word_testcases.html
 python -m pytest -v --html-report=./report/longest_transpose_word_testcases.html
 
 ```
- 
+
+**Run the test cases along with test coverage (optional)** 
+- Navigate to the location of tests (~/sc_coding_challenge/tests) folder. 
+- Once the tests are run successfully, html report can be found at ~/sc_coding_challenge/tests/report/longest_transpose_word_testcases.html
+```cmd
+coverage run --source=. -m pytest -v --html-report=./report/longest_transpose_word_testcases.html
+```
+- Once the above command run successfully, get the test coverage report by using below command.
+```cmd
+coverage report -m 
+```
+
 **Using Docker** 
 - Install the Docker Desktop
     - Mac Users: https://docs.docker.com/docker-for-mac/install/
@@ -79,8 +93,11 @@ docker rm -f longest_transposed_word_container
 docker run --name longest_transposed_word_container --mount type=bind,source=$(pwd),target=/report sc_coding_challenge_longest_transpose_word    
 ```
 
-## Test Coverage
+## Total Testcases
 - Created 17 positive and 7 negative testcases
+
+## Test Coverage
+![testcoverage_report](testcoverage_report.png)
 
 ## Unit test Report
 - Sample report can be found [here](https://github.com/nityasantoshi/sc_coding_challenge/blob/master/longest_transpose_word_testcases_docker.html)
