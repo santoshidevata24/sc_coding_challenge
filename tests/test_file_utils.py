@@ -5,6 +5,7 @@ from src import ValidationError
 
 # Testcases for file utility module
 
+@pytest.mark.positive_testcase
 def test_simple_file_load():
     """
        Validate program against simple file load
@@ -12,6 +13,7 @@ def test_simple_file_load():
     fileContents = FileOperations.load_file(file_path="input_data_files/simple_file.txt")
     assert "a\nab\nabc\nabcd\nabcde" == fileContents
 
+@pytest.mark.positive_testcase
 def test_special_characters_file():
     """
        Validate program against special characters file
@@ -19,7 +21,7 @@ def test_special_characters_file():
     fileContents = FileOperations.load_file(file_path="../tests/input_data_files/special_characters_file.txt")
     assert "%%&%&&\n&^&(&(?\n$%^&*()%$^&*())" == fileContents
 
-
+@pytest.mark.negative_testcase
 def test_file_not_found():
     """
         Validate program against non-existing file
@@ -27,6 +29,7 @@ def test_file_not_found():
     with pytest.raises(FileNotFoundError):
         FileOperations.load_file(file_path="input_data_files/nofile.txt")
 
+@pytest.mark.negative_testcase
 def test_empty_file():
     """
         Validate program against an empty file
@@ -35,6 +38,7 @@ def test_empty_file():
         FileOperations.load_file(file_path="input_data_files/empty_file.txt")
         assert "File is empty" == e_info
 
+@pytest.mark.negative_testcase
 def test_invalid_file_type():
     """
         Validate program against invalid file type
@@ -43,6 +47,7 @@ def test_invalid_file_type():
         FileOperations.load_file(file_path="input_data_files/invalid_file_type.jpg")
         assert "Invalid file type" == e_info
 
+@pytest.mark.negative_testcase
 def test_non_unicode_file():
     """
         Validate program against non unicode characters file
