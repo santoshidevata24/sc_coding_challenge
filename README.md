@@ -78,6 +78,10 @@ docker build -t sc_coding_challenge_longest_transpose_word .
 docker rm -f longest_transposed_word_container
 docker run --name longest_transposed_word_container --mount type=bind,source=$(pwd),target=/report sc_coding_challenge_longest_transpose_word    
 ```
+
+## Test Coverage
+- Created 17 positive and 7 negative testcases
+
 ## Unit test Report
 - Sample report can be found [here](https://github.com/nityasantoshi/sc_coding_challenge/blob/master/longest_transpose_word_testcases_docker.html)
 
