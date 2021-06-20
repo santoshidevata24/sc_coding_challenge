@@ -26,7 +26,8 @@ Tested on below operating systems
 
 ## Pre-requisites
 
-*Note: If you have multiple versions(python2,python3+) of python installed, make sure that you use **python3 and pip3** at applicable places.*
+
++ ***Note: If you have multiple versions(python2,python3+) of python installed, make sure that you use **python3 and pip3** at applicable places.***
 
 Mac Users:
 - Install [python3](https://docs.python-guide.org/starting/install3/osx/)
@@ -58,21 +59,23 @@ python main.py --file_location="tests/input_data_files/simple_file.txt"
  - Navigate to the location of tests (~/sc_coding_challenge/tests) folder. 
  - Once the tests are run successfully, html report can be found at ~/sc_coding_challenge/tests/report/longest_transpose_word_testcases.html
 ```cmd
-pytest -v --html-report=./report/longest_transpose_word_testcases.html
+Mac: pytest -v --html-report=./report/longest_transpose_word_testcases.html
                             or
-python -m pytest -v --html-report=./report/longest_transpose_word_testcases.html
+Windows: python -m pytest -v --html-report=./report/longest_transpose_word_testcases.html
 
 ```
 
-**Run the test cases along with test coverage (optional)** 
+**Run the test cases along with test coverage** 
 - Navigate to the location of tests (~/sc_coding_challenge/tests) folder. 
 - Once the tests are run successfully, html report can be found at ~/sc_coding_challenge/tests/report/longest_transpose_word_testcases.html
 ```cmd
+Mac: 
 coverage run --source=. -m pytest -v --html-report=./report/longest_transpose_word_testcases.html
-```
-- Once the above command run successfully, get the test coverage report by using below command.
-```cmd
 coverage report -m 
+                                or
+Windows: 
+python -m coverage run --source=. -m pytest -v --html-report=./report/longest_transpose_word_testcases.html
+python -m coverage report -m
 ```
 
 **Using Docker** 
@@ -96,10 +99,10 @@ docker run --name longest_transposed_word_container --mount type=bind,source=$(p
 ## Total Testcases
 - Created 17 positive and 7 negative testcases
 
-## Test Coverage
-![testcoverage_report](testcoverage_report.png)
-
 ## Unit test Report
-- Sample report can be found [here](https://github.com/nityasantoshi/sc_coding_challenge/blob/master/longest_transpose_word_testcases_docker.html)
+- Sample report can be found [here](https://github.com/santoshidevata24/sc_coding_challenge/blob/master/testreport.png)
 
 ![test_report](testreport.png)
+
+## Test Coverage
+![testcoverage_report](testcoverage_report.png)
